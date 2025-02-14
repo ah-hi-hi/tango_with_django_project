@@ -6,7 +6,11 @@
 
 {% block content %}
     <h2>Rango says...</h2>
-    <p>hey there partner!</p>
+    {% if user.is_authenticated %}
+        howdy {{ user.username }}!
+    {% else %}
+        hey there partner!
+    {% endif %}
 
     <div>
         <strong>{{ boldmessage }}</strong><br />
